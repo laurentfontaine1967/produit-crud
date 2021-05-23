@@ -109,12 +109,12 @@ function modifier()
       die();
    }
 
-    $produit = Produit::retrieveByPK($_GET['id']);
-    $produit->nom = $data['product-name'];
-    $produit->prix = $data['product-price'];
-    $produit->image = $fichier;
-    $produit->type = $data['product-type'];
-    $produit->description = $data['product-description'];
-    $produit->modifier();
+    $produit = Produit::retrieveByPK($_POST['id']);
+    $produit->nom = $_POST['product-name'];
+    $produit->prix =  $_POST['product-price'];
+    // $produit->image = $fichier;
+    $produit->type =  $_POST['product-type'];
+    $produit->description =  $_POST['product-description'];
+    $produit->save();
     onVaRediriger('/catalogue');
 }

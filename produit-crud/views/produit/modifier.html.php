@@ -24,18 +24,20 @@
         }
         ?>
         
-        <form method="POST" action="/produit-crud/router.php/modifier-produit" enctype="multipart/form-data" class="p-5">
+        <form method="POST" action="http://localhost/produit-crud/router.php/modifier-produit" enctype="multipart/form-data" class="p-5" id=<?php echo $produit->id ?>>
             <div class="form-group">
                 <label>Nom du produit</label>
-                <input type="text" name="product-name" class="form-control">
+                <input type="text" name="product-name" class="form-control" value="<?php echo $produit->nom; ?>" >                        
             </div>
             <div class="form-group">
                 <label>Prix du produit</label>
-                <input type="text" name="product-price" class="form-control">
+                <input type="text" name="product-price" class="form-control" value="<?php echo $produit->prix; ?>">
             </div>
+
             <div class="form-group">
                 <label>Photo du produit</label>
                 <input type="file" name="product-photo-file" class="form-control-file">
+                <img src="http://localhost/produit-crud/<?php echo $produit->image; ?>" alt="image">
             </div>
             <select name="product-type">
                 <option value="voiture">Produit voiture</option>
@@ -45,6 +47,7 @@
                 <label>Description du produit</label>
                 <input type="text" name="product-description" class="form-control">
             </div>
+            <a class="btn btn-dark" href="http://produit-crud/router.php/catalogue">Abandonner</a>
             <button name="btn-valider" type="submit" class="btn btn-primary">Ajouter le produit</button>
         </form>
 

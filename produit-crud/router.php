@@ -38,11 +38,10 @@ if (isset($_SERVER['PATH_INFO']) == false)
     require DOSSIER_CONTROLLERS.'/produit.php';
     delete();
 
-} else if($_SERVER['PATH_INFO'] == '/modifier-produit'){
-    
+} else if($_SERVER['PATH_INFO'] == '/modifier-produit')
+{ 
     require DOSSIER_CONTROLLERS.'/produit.php';
-    modifier();
-    show();
+    modifier();  
 }
 
 else
